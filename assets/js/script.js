@@ -97,9 +97,9 @@ function displayErrors(data) {
 function displayException(data) {
   var heading = `An Exception has occurred`;
   let result;
-  result = `<div>The API return status code 400</div>`;
-  result += `<div>Error number: 2</div>`;
-  result += `<div>Error text: ${data.error}</div>`;
+  result = `<div>The API return status code ${data.status_code}</div>`;
+  result += `<div>Error number: <strong>${data.error_no}</strong></div>`;
+  result += `<div>Error text: <strong>${data.error}</strong></div>`;
 
   document.getElementById("resultsModalTitle").innerText = heading;
   document.getElementById("results-content").innerHTML = result;
