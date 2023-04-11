@@ -11,5 +11,7 @@ async function getStatus(e) {
 
   if (response.ok) {
     console.log(data);
+  } else {
+    throw new Error(data.error);
   }
 }
