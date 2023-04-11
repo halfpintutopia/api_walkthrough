@@ -70,6 +70,7 @@ async function postForm(e) {
   if (response.ok) {
     displayErrors(data);
   }  else {
+    displayException(data);
     throw new Error(data.error);
   }
 }
@@ -90,5 +91,17 @@ function displayErrors(data) {
 
   document.getElementById("resultsModalTitle").innerText = heading;
   document.getElementById("results-content").innerHTML = results;
+  resultModal.show();
+}
+
+function displayException(data) {
+  var heading = `An Exception has occurred`;
+  let result;
+  result = `<div>The API return status code 400</div>`;
+  result += `<div>Error number: 2</div>`;
+  result += `<div>Error text: ${data.error}</div>`;
+
+  document.getElementById("resultsModalTitle").innerText = heading;
+  document.getElementById("results-content").innerHTML = result;
   resultModal.show();
 }
