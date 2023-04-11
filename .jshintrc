@@ -8,5 +8,6 @@
   "newcap": true,
   "nomen": true,
   "plusplus": false,
-  "white": true
+  "white": true,
+  "varstmt": false
 }
